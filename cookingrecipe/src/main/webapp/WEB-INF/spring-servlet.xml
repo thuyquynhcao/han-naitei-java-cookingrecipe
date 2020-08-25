@@ -14,14 +14,6 @@
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven validator="validator">
-	    <mvc:message-converters>
-	        <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-	            <property name="objectMapper" ref="objectMapper"/>
-	        </bean>
-	        <bean class="org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter">
-	            <property name="objectMapper" ref="xmlMapper"/>
-	        </bean>
-	    </mvc:message-converters>
 	</mvc:annotation-driven>
 	
 	<!-- Localization of hibernate messages during validation! -->
@@ -35,17 +27,9 @@
 	<context:component-scan base-package="com.cookingrecipe.controller" />
 	<context:component-scan base-package="com.cookingrecipe.service" />
 	<context:component-scan base-package="com.cookingrecipe.dao" />
- 	<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
-	    <property name="mediaTypes">
-	        <value>
-	            json=application/json
-	            xml=application/xml
-	        </value>
-	    </property>
-	</bean>
+	<context:component-scan base-package="com.cookingrecipe.enetity" />
  	<!-- resources -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
-<!-- 	<mvc:resources mapping="/webjars/**" location="/webjars/" /> -->
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="classpath:messages" />
@@ -100,6 +84,5 @@
   		<property name="templateEngine" ref="templateEngine" />
   		<!-- NOTE 'order' and 'viewNames' are optional -->
   		<property name="order" value="1" />
-  		<!-- <property name="viewNames" value="*.html,*.xhtml" /> -->
 	</bean>
 </beans>
