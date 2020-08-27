@@ -26,7 +26,7 @@
 		<jackson-param-name.version>2.4.1</jackson-param-name.version>
 		<jackson-xml.version>2.11.2</jackson-xml.version>
 		<json.version>20200518</json.version>
-		</properties>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -198,5 +198,16 @@
 	</dependencies>
 	<build>
 		<finalName>cookingrecipe</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>
