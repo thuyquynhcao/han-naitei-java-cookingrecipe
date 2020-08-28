@@ -1,0 +1,165 @@
+.recipe-title{
+	position: relative;
+	height:300px;
+	margin: 0 5%; 
+}
+.recipe-image{
+	height: 300px;
+	width: 500px;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:0;
+} 
+.opacity{
+	position: absolute;
+	height: 300px;
+	width: 500px;
+	top: 0;
+	left: 0;
+	opacity: 0.3;
+	z-index: 1;
+}
+.overview{
+	position: absolute;
+	box-sizing: border-box;
+	height: 300px;
+	width: 500px;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	padding: 50px 200px;
+	color: #FFF;
+}
+
+.overview h1{
+	font-weight: 500;
+	font-size: 70px;
+	letter-spacing: 2px;
+}
+
+.recipe-content{
+	margin: 20px 5%;
+}
+
+.recipe-content p{
+	margin: 20px;
+}
+
+.recipe-content h2{
+	color: #FE2E2E;
+	letter-spacing: 2px;
+	font-weight: 600;
+	margin: 30px 0;
+}
+
+.step-card{
+	background-color: #fff;
+	border-radius: 8px;
+	border: 1px solid #D8D8D8;
+	box-shadow: 1px 1px 10px #D8D8D8;
+	padding: 10px;
+}
+
+.step-card img{
+	width: 60px;
+	height: 60px;
+}
+
+.comment-card{
+	background-color: #fff;
+	border-radius: 8px;
+	border: 1px solid #FE2E2E;
+	color: #000;
+}
+
+.comment-card .user-comment{
+	color: #FE2E2E;
+}
+
+.space{
+	padding-bottom: 30px;
+}
+nav{
+    background-color:#1abc9c;
+}
+nav ul{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+}
+nav li{
+    display:inline-block;
+}
+nav li a{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    padding:14px 16px;
+}
+.search{
+    position:relative;
+    display:inline-block;
+    color:white;
+    padding:14px 16px;
+    float:right;
+}
+.search-bar{
+    position:absolute;
+    display:none;
+    right:0;
+    top:45px;
+}
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    outline:none;
+    padding: 12px 14px;
+    transition: width 0.4s ease-in-out;
+}
+nav li:hover{
+    background-color:orange;
+}
+.search:hover{
+    background-color:lightpink;
+    color:black;
+}
+.search:hover .search-bar{
+    display:block;
+}
+form input[type="text"]:focus{
+    width:500px;
+    background-color:lightpink;
+}
+/* Cột trái */
+.leftcolumn { 
+  float: left;
+  width: 75%;
+}
+
+/* Cột phải */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #e9d8f4;
+  padding-left: 20px;
+}
+
+/* Thêm định dạng thẻ cho bài viết */
+.card {
+  background-color: rgb(252, 253, 249);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear float khác sau các cột */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
