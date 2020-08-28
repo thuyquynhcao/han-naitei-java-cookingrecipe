@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="views/layout/base-layout">
+<div layout:fragment="body">   
+	<div class="container">
+	<h2>Tạo mới và chia sẻ công thức </h2>
+		<form>
+			<img border="0" src="http://webcoban.vn/image/cat-2.jpg" width="300px" height="200px">
+			<br></br>
+			<label for="fname">Tên công thức </label>
+			<input type="text" id="name" name="name" placeholder="Nhập tên công thức ..." required>
+	 
+			<label for="lname">Thời gian làm </label>
+			<input type="text" id="email" name="email" placeholder="Nhập thời gian làm ..." required>
+	 
+			<label for="country">Nguyên liệu </label>
+			<input type="text" id="phone" name="phone" placeholder="Nhập nguyên liệu, ví dụ 1 con gà, 1 kg muối ..." required>
+			<label for="address">Các bước làm </label>
+			<input type="text" id="address" name="address" placeholder="Nhập nội dung các bước ..." required>
+
+			<input type="submit" value="Submit">
+		</form>
+		</div>
+	</div>
+</html>
