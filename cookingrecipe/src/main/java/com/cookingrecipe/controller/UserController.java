@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cookingrecipe.model.user.UserRequest;
 import com.cookingrecipe.service.user.UserService;
+
 import com.sun.istack.logging.Logger;
 
 @Controller
@@ -27,4 +28,5 @@ public class UserController {
 	 this.userService.createAccount(p);
 	 return "redirect:/signup";
 	}
+
 }

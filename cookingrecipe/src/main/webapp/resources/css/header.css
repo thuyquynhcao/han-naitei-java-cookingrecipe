@@ -1,10 +1,12 @@
 header .navbar{
 	background-color: #FE2E2E !important;
 	color: #fff;
+	position: sticky;
 }
 
 .navbar-brand{
 	font-weight: 600;
+	letter-spacing: 8px;
 }
 
 .header-navbar a{
