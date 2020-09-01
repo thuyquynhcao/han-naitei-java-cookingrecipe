@@ -1,0 +1,25 @@
+.signup p{
+	text-align: center;
+	color: #35257b;
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.signup{
+	padding: 10px 20%;
+}
+.signup label{
+	color: #58257b;
+}
+.signup button{
+	background-color: #58257b;
+	font-weight: 600;
+	padding: 10px 15px;
+	color: #fff;
+	border: 1px solid #58257b;
+}
+
+.signup button:hover{
+	background-color: #fff;
+	color: #58257b;
+}

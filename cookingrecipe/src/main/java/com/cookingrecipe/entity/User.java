@@ -31,12 +31,15 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@NotBlank
+	
+	private String fullname;
+	
+	@NotNull
 	@Email
 	@Column(nullable = false)
 	private String mail;
 
-	@NotBlank
+	@NotNull
 	@Column(nullable = false)
 	private String password;
 

@@ -13,32 +13,30 @@
         https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<!-- Enables the Spring MVC @Controller programming model -->
+
 	<mvc:annotation-driven validator="validator">
+
 	</mvc:annotation-driven>
 
 	<!-- Localization of hibernate messages during validation! -->
-	<bean name="validator"
-		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-		<property name="validationMessageSource">
-			<ref bean="messageSource" />
-		</property>
-	</bean>
-	<context:annotation-config></context:annotation-config>
-	<context:component-scan
-		base-package="com.cookingrecipe.controller" />
-	<context:component-scan
-		base-package="com.cookingrecipe.service" />
-	<context:component-scan
-		base-package="com.cookingrecipe.dao" />
-	<context:component-scan
-		base-package="com.cookingrecipe.entity" />
-	<!-- resources -->
-	<mvc:resources mapping="/resources/**"
-		location="/resources/" />
 
+    <bean name="validator"
+        class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="validationMessageSource">
+            <ref bean="messageSource" />
+        </property>
+    </bean>
+    <context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.cookingrecipe.controller" />
+	<context:component-scan base-package="com.cookingrecipe.service" />
+	<context:component-scan base-package="com.cookingrecipe.dao" />
+	<context:component-scan base-package="com.cookingrecipe.entity" />
+ 	<!-- resources -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/webjars/**" location="/webjars/" />
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basename" value="classpath:messages" />
+		<property name="basename" value="classpath:i18n/messages" />
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
 
@@ -62,8 +60,9 @@
 		class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
 		<property name="prefix" value="/html/" />
 		<property name="suffix" value=".html" />
+		<property name="characterEncoding" value="UTF-8"/>
 		<!-- HTML is the default value, added here for the sake of clarity. -->
-		<property name="templateMode" value="HTML" />
+		<property name="templateMode" value="HTML5" />
 		<!-- Template cache is true by default. Set to false if you want -->
 		<!-- templates to be automatically updated when modified. -->
 		<property name="cacheable" value="false" />
@@ -92,10 +91,11 @@
 		</property>
 	</bean>
 
-	<bean id="viewResolver"
-		class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
-		<property name="templateEngine" ref="templateEngine" />
-		<!-- NOTE 'order' and 'viewNames' are optional -->
-		<property name="order" value="1" />
+    <bean id="viewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+  		<property name="templateEngine" ref="templateEngine" />
+  		<!-- NOTE 'order' and 'viewNames' are optional -->
+  		<property name="order" value="1" />
+  		<property name="contentType" value="text/html; charset=UTF-8" />
+
 	</bean>
 </beans>
