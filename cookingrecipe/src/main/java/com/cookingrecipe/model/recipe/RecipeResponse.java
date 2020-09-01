@@ -2,7 +2,6 @@ package com.cookingrecipe.model.recipe;
 
 import java.util.List;
 import java.util.Set;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.NumberFormat;

@@ -13,12 +13,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.UpdateTimestamp;
-
 import lombok.Data;
 
 @Entity
@@ -53,7 +51,7 @@ public class Recipe {
 
 	@ManyToMany
 	private Set<Category> categories;
-	
+
 	@CreationTimestamp
 	private Date createdAt;
 	
