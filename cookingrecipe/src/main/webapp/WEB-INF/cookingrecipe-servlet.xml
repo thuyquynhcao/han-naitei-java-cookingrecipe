@@ -17,6 +17,6 @@
 	<import resource="spring-datasource.xml" />
 	<import resource="spring-service.xml" />
 	<import resource="spring-servlet.xml" />
-
+	<import resource="spring-dao.xml" />
 
 </beans>
