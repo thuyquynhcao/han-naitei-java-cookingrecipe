@@ -1,0 +1,12 @@
+header .navbar{
+	background-color: #FE2E2E !important;
+	color: #fff;
+}
+
+.navbar-brand{
+	font-weight: 600;
+}
+
+.header-navbar a{
+	color: #fff !important;
+}

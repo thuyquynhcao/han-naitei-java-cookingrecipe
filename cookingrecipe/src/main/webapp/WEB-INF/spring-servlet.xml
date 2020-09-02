@@ -34,6 +34,8 @@
  	<!-- resources -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	<mvc:resources mapping="/webjars/**" location="/webjars/" />
+	<mvc:resources mapping="/html/**" location="/html/" />
+	
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="classpath:i18n/messages" />
