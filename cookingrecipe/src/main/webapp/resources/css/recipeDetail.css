@@ -1,0 +1,82 @@
+.recipe-title{
+	position: relative;
+	height:300px;
+	margin: 0 5%; 
+}
+.recipe-image{
+	height: 300px;
+	width: 993px;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:0;
+} 
+.opacity{
+	position: absolute;
+	height: 300px;
+	width: 993px;
+	top: 0;
+	left: 0;
+	opacity: 0.3;
+	z-index: 1;
+}
+.overview{
+	position: absolute;
+	box-sizing: border-box;
+	height: 300px;
+	width: 1000px;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	padding: 50px 200px;
+	color: #FFF;
+}
+
+.overview h1{
+	font-weight: 800;
+	font-size: 70px;
+	letter-spacing: 2px;
+}
+
+.recipe-content{
+	margin: 20px 5%;
+}
+
+.recipe-content p{
+	margin: 20px;
+}
+
+.recipe-content h2{
+	color: #FE2E2E;
+	letter-spacing: 2px;
+	font-weight: 600;
+	margin: 30px 0;
+}
+
+.step-card{
+	background-color: #fff;
+	border-radius: 8px;
+	border: 1px solid #D8D8D8;
+	box-shadow: 1px 1px 10px #D8D8D8;
+	padding: 10px;
+}
+
+.step-card img{
+	width: 60px;
+	height: 60px;
+}
+
+.comment-card{
+	background-color: #fff;
+	border-radius: 8px;
+	border: 1px solid #FE2E2E;
+	color: #000;
+}
+
+.comment-card .user-comment{
+	color: #FE2E2E;
+}
+
+.space{
+	padding-bottom: 80px;
+}

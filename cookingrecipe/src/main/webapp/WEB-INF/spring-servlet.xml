@@ -19,7 +19,7 @@
 	</mvc:annotation-driven>
 
 	<!-- Localization of hibernate messages during validation! -->
-
+	
     <bean name="validator"
         class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
         <property name="validationMessageSource">
