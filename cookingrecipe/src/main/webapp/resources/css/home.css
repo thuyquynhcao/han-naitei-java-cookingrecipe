@@ -3,7 +3,7 @@
 	height:300px;
 	margin: 0 5%; 
 }
-.recipe-image{
+.recipe-image-home{
 	height: 300px;
 	width: 500px;
 	position: absolute;
@@ -11,7 +11,7 @@
 	left:0;
 	z-index:0;
 } 
-.opacity{
+.opacity-home{
 	position: absolute;
 	height: 300px;
 	width: 500px;
@@ -130,7 +130,7 @@ nav li:hover{
 .search:hover .search-bar{
     display:block;
 }
-form input[type="text"]:focus{
+.search-bar input:focus{
     width:500px;
     background-color:lightpink;
 }
