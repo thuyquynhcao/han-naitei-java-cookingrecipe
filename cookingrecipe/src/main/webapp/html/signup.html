@@ -9,7 +9,7 @@
 <body>
 <div th:insert="~{layout/header :: header}"></div>
   <div class="container">
-  	<form class="signup" action="/cookingrecipe/users" method="post">
+  	<form class="form signup" action="/cookingrecipe/users" method="post">
   		<p th:text="#{signup.title}"></p>
   	  <div class="form-group">
 	    <label for="fullname" th:text="#{signup.fullname}"></label>
@@ -28,9 +28,10 @@
 	    <label for="confirm-password" th:text="#{signup.confirmpassword}">Confirm Password</label>
 	    <input type="password" class="form-control" id="confirm-password" name="confirmPassword">
 	  </div>
-	  <button type="submit" class="btn" th:text="#{signup.submit}">Submit</button>
+	  <button type="submit" class="btn btn-submit" th:text="#{signup.submit}">Submit</button>
 	</form>
   </div>
+  <p class="space"></p>
   <div th:insert="~{layout/footer :: footer}"></div>
   </body>
 </html>
