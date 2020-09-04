@@ -45,7 +45,7 @@ tmp/
 *.tmp
 *.bak
 *.swp
-*~.nib
+*~.nib
 local.properties
 .settings/
 .loadpath
@@ -59,3 +59,6 @@ local.properties
 
 #file private
 cookingrecipe/src/main/resources/datasource.properties
+
+.DS_Store
+
