@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.cookingrecipe.model.category.PureCategory;
 import com.cookingrecipe.model.recipe.RecipeRequest;
+import com.cookingrecipe.model.comment.CommentRequest;
 import com.cookingrecipe.model.recipe.RecipeResponse;
 import com.cookingrecipe.service.category.ICategoryService;
 import com.cookingrecipe.service.recipe.IRecipeService;
@@ -32,6 +33,7 @@ public class RecipeController {
 	public String show(@PathVariable Integer idRecipe, ModelMap model) {
 		RecipeResponse recipeResponse = recipeService.getById(idRecipe);
 		model.addAttribute("recipe", recipeResponse);
+		model.addAttribute("comment", new CommentRequest());
 		return "recipeDetail";
 	}
 	

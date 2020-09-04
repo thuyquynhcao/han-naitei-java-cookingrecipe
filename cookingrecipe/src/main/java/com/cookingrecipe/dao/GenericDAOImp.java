@@ -51,4 +51,11 @@ public class GenericDAOImp<E, Id extends Serializable> implements IGenericDAO<E,
 		return res;
 	}
 
+	@Override
+	public E save(E entity) throws Exception {
+		// TODO Auto-generated method stub
+		getHibernateTemplate().saveOrUpdate(entity);
+		getHibernateTemplate().flush();
+		return entity;
+	}
 }
