@@ -110,7 +110,7 @@ nav li a{
     right:0;
     top:45px;
 }
-input[type=text] {
+.search-bar input {
     width: 130px;
     box-sizing: border-box;
     border: 1px solid black;
