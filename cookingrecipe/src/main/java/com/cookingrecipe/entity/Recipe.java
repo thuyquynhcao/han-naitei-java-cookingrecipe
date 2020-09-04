@@ -1,8 +1,9 @@
 package com.cookingrecipe.entity;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,53 +13,47 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.format.annotation.NumberFormat;
-import lombok.Getter;
-import lombok.Setter;
+
+import lombok.Data;
 
 @Entity
 @Table(name = "Recipes")
-@Getter
-@Setter
+@Data
 public class Recipe {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@NotBlank
 	@Column(nullable = false)
 	private String name;
 
-	@NumberFormat
 	private Integer time;
 
 	private String image;
 
-	@NumberFormat
 	private Integer likes;
 
-	@NotNull
 	@OneToMany(mappedBy = "recipe")
-	private List<Step> steps;
-	
-	@NotBlank
+	private Set<Step> steps;
+
 	@Column(columnDefinition="TEXT")
 	private String ingredient;
 
-	@NotNull
 	@ManyToOne
 	private User user;
 
 	@OneToMany(mappedBy = "recipe")
-	private List<Comment> comments;
+	private Set<Comment> comments;
 
 	@ManyToMany
-	private List<Category> categories;
+	private Set<Category> categories;
+	
 	@CreationTimestamp
 	private Date createdAt;
 	

@@ -7,8 +7,11 @@
         http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="userDAO" class="com.cookingrecipe.dao.user.UserDaoImpl">
+	<bean id="recipeDAO" class="com.cookingrecipe.dao.RecipeDAOImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="userDAO" class="com.cookingrecipe.dao.user.UserDaoImpl" >
      	<property name="sessionFactory" ref="sessionFactory" />
  	</bean>
- 	
+
 </beans>
