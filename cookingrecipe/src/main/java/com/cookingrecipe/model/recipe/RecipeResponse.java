@@ -27,13 +27,13 @@ public class RecipeResponse {
 
 	private Integer likes;
 
-	private Set<Step> steps;
+	private List<Step> steps;
 
 	private String ingredient;
 
 	private User user;
 
-	private Set<Comment> comments;
+	private List<Comment> comments;
 
 	private Set<Category> categories;
 	

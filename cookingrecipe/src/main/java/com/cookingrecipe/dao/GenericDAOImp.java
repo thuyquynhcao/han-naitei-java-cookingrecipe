@@ -4,13 +4,18 @@ import java.io.Serializable;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import org.hibernate.Session;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DataAccessUtils;
+import org.springframework.data.util.Pair;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import com.cookingrecipe.dao.interfaces.IGenericDAO;
+import com.cookingrecipe.entity.Recipe;
 
 public class GenericDAOImp<E, Id extends Serializable> implements IGenericDAO<E, Id> {
 	private Class<E> entityClass;

@@ -28,7 +28,7 @@ public class RecipeRequest {
 	private String image;
 
 	@NotNull
-	private Set<Step> steps;
+	private List<Step> steps;
 	
 	@NotBlank
 	private String ingredient;

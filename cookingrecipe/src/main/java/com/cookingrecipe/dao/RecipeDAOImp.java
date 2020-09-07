@@ -1,9 +1,7 @@
 package com.cookingrecipe.dao;
 
-import org.hibernate.FetchMode;
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Restrictions;
-import org.springframework.dao.support.DataAccessUtils;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 import com.cookingrecipe.dao.interfaces.IRecipeDAO;
 import com.cookingrecipe.entity.Recipe;
 
@@ -16,12 +14,19 @@ public class RecipeDAOImp extends GenericDAOImp<Recipe, Integer> implements IRec
 
 	@Override
 	public Recipe getRecipeDetails(Integer id) {
-		DetachedCriteria criteria = DetachedCriteria.forClass(Recipe.class);
-		criteria.setFetchMode("steps", FetchMode.JOIN);
-		criteria.setFetchMode("categories", FetchMode.JOIN);
-		criteria.setFetchMode("comments", FetchMode.JOIN);
-		criteria.add(Restrictions.eq("id", id));
-		return (Recipe) DataAccessUtils.uniqueResult(getHibernateTemplate().findByCriteria(criteria));
+		Session ss = getHibernateTemplate().getSessionFactory().getCurrentSession();
+		String hql ="SELECT r FROM Recipe r inner join fetch r.steps WHERE r.id=:id";
+		Query<Recipe> query = ss.createQuery(hql, Recipe.class)
+				.setParameter("id", id);
+		Recipe recipe = query.uniqueResult();
+		hql = "SELECT r FROM Recipe r left join fetch r.comments WHERE r.id=:id";
+		query = ss.createQuery(hql, Recipe.class)
+				.setParameter("id", recipe.getId());
+		recipe = query.uniqueResult();
+		hql = "SELECT r FROM Recipe r left join fetch r.categories WHERE r.id=:id";
+		query = ss.createQuery(hql, Recipe.class)
+				.setParameter("id", recipe.getId());
+		recipe = query.uniqueResult();
+		return recipe;
 	}
-	
 }
