@@ -1,6 +1,8 @@
 package com.cookingrecipe.model.recipe;
 
 import java.util.List;
+import java.util.Set;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.NumberFormat;
@@ -26,7 +28,7 @@ public class RecipeRequest {
 	private String image;
 
 	@NotNull
-	private List<Step> steps;
+	private Set<Step> steps;
 	
 	@NotBlank
 	private String ingredient;
@@ -34,6 +36,6 @@ public class RecipeRequest {
 	@NotNull
 	private User user;
 
-	private List<Category> categories;
+	private Set<Category> categories;
 
 }

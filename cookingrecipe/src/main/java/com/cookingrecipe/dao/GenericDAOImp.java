@@ -1,17 +1,15 @@
 package com.cookingrecipe.dao;
 
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.orm.hibernate5.HibernateTemplate;
-import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
-
 import com.cookingrecipe.dao.interfaces.IGenericDAO;
 
 public class GenericDAOImp<E, Id extends Serializable> implements IGenericDAO<E, Id> {
@@ -46,8 +44,11 @@ public class GenericDAOImp<E, Id extends Serializable> implements IGenericDAO<E,
 	
 	
 	@Override
-	public List<E> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<E> findAll() throws Exception {
+		DetachedCriteria criteria = DetachedCriteria.forClass(getEntityClass());
+		criteria.addOrder(Order.desc("updatedAt"));
+		List<E> res = (List<E>) getHibernateTemplate().findByCriteria(criteria);
+		return res;
 	}
+
 }
