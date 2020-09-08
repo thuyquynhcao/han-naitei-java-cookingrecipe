@@ -16,4 +16,7 @@
 	<bean id="categoryDAO" class="com.cookingrecipe.dao.CategoryDAOImp">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
+	<bean id="commentDAO" class="com.cookingrecipe.dao.CommentDAOImp" >
+     	<property name="hibernateTemplate" ref="hibernateTemplate" />
+ 	</bean>
 </beans>

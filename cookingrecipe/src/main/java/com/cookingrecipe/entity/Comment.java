@@ -23,15 +23,12 @@ public class Comment {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
-	@NotNull
 	@Column(nullable = false, columnDefinition="TEXT")
 	private String content;
 	
-	@NotNull
 	@ManyToOne
 	private User user;
 	
-	@NotNull
 	@ManyToOne
 	private Recipe recipe;
 	@CreationTimestamp

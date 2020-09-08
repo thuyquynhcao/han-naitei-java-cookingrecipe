@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
-
-import com.cookingrecipe.comparator.CategoryComparator;
 import com.cookingrecipe.dao.interfaces.ICategoryDAO;
 import com.cookingrecipe.entity.Category;
 

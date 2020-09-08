@@ -4,7 +4,6 @@ import org.hibernate.FetchMode;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.dao.support.DataAccessUtils;
-import com.cookingrecipe.comparator.RecipeComparator;
 import com.cookingrecipe.dao.interfaces.IRecipeDAO;
 import com.cookingrecipe.entity.Recipe;
 

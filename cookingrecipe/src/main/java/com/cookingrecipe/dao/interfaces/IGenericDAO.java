@@ -7,4 +7,5 @@ import java.util.Comparator;
 public interface IGenericDAO<E, Id extends Serializable> {
 	E getById(Id id);
 	List<E> findAll() throws Exception;
+	E save(E entity) throws Exception;
 }
