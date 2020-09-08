@@ -14,8 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.UpdateTimestamp;
 import lombok.Data;
 
@@ -35,10 +33,10 @@ public class Recipe {
 
 	private String image;
 
-	private Integer likes;
+	private Integer likes = 0;
 
 	@OneToMany(mappedBy = "recipe")
-	private Set<Step> steps;
+	private List<Step> steps;
 
 	@Column(columnDefinition="TEXT")
 	private String ingredient;
@@ -47,7 +45,7 @@ public class Recipe {
 	private User user;
 
 	@OneToMany(mappedBy = "recipe")
-	private Set<Comment> comments;
+	private List<Comment> comments;
 
 	@ManyToMany
 	private Set<Category> categories;
